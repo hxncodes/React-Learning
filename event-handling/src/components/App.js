@@ -2,13 +2,24 @@ import { useState } from "react";
 import "../App.css";
 
 function App() {
-  const [heading, setHeading] = useState("Hello");
+  // Controlled Input state
+  const [name, setName] = useState("");
+
+  const [headingText, setHeading] = useState("");
 
   // handling mouseOver Event
   const [isMouseOver, setMouseOver] = useState(false);
 
-  function handleClick() {
-    setHeading("Submitted");
+  function handleChange(event) {
+    setName(event.target.value);
+    // console.log(event.target.placeholder);
+    // console.log(event.target.type);
+  }
+
+  // prevenDefault event will not allow default behaviour of Forms
+  function handleSubmit(event) {
+    setHeading(name);
+    event.preventDefault();
   }
 
   function handleMouseOver() {
@@ -24,17 +35,24 @@ function App() {
         <h1>Event handling</h1>
       </header>
       <div className="container">
-        <h1>{heading}</h1>
-        <input type="text" placeholder="What's your name?" />
-        <button
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-          // Conditionaly rendering style of button
-          style={{ backgroundColor: isMouseOver ? "Black" : "red" }}
-          onClick={handleClick}
-        >
-          Submit
-        </button>
+        <h1>Welcome {headingText}</h1>
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            onChange={handleChange}
+            placeholder="What's your name?"
+            value={name}
+          />
+          <button
+            type="submit"
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            // Conditionaly rendering style of button
+            style={{ backgroundColor: isMouseOver ? "Black" : "teal" }}
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </>
   );
