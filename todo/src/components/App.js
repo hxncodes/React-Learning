@@ -1,10 +1,12 @@
 import "../App.css";
-import SpreadOperatorChallange from "./SpreadOperatorChallange";
+import ComponentTree from "./ComponentTree";
+// import SpreadOperatorChallange from "./SpreadOperatorChallange";
 
 function App() {
   return (
     <>
-      <SpreadOperatorChallange />
+      {/* <SpreadOperatorChallange /> */}
+      <ComponentTree />
     </>
   );
 }
