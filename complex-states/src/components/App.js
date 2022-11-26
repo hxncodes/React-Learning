@@ -1,6 +1,8 @@
 import "../App.css";
+import SimpleStates from "./SimpleStates";
+import ChallangeComplexStates from "./ChallangeComplexStates";
 import ComplexStates from "./ComplexStates";
-// import SimpleStates from "./SimpleStates";
+import SpreadOperator from "./SpreadOperator";
 
 function App() {
   return (
@@ -9,7 +11,9 @@ function App() {
         <h1>Complex States</h1>
       </header>
       {/* <SimpleStates /> */}
-      <ComplexStates />
+      {/* <ComplexStates /> */}
+      {/* <ChallangeComplexStates /> */}
+      <SpreadOperator />
     </>
   );
 }

@@ -1,27 +1,35 @@
 import { useState } from "react";
 
-export default function ComplexStates() {
-  // Creating useState Object named fullName
-  const [fullName, setFullName] = useState({
+export default function ChallangeComplexStates() {
+  const [contact, setContact] = useState({
     fName: "",
     lName: "",
+    email: "",
   });
 
   function handleChange(event) {
     // catching event in handleChange function and the destructuring its required parameters
-    const { value, name } = event.target;
+    const { name, value } = event.target;
 
     // setting new value depending their input filed and preserving preveious value with arrow function of preValue
-    setFullName((prevValue) => {
+    setContact((prevValue) => {
       if (name === "fName") {
         return {
           fName: value,
           lName: prevValue.lName,
+          email: prevValue.email,
         };
       } else if (name === "lName") {
         return {
           fName: prevValue.fName,
           lName: value,
+          email: prevValue.email,
+        };
+      } else if (name === "email") {
+        return {
+          fName: prevValue.fName,
+          lName: prevValue.lName,
+          email: value,
         };
       }
     });
@@ -30,20 +38,27 @@ export default function ComplexStates() {
   return (
     <div className="container">
       <h1>
-        Hello {fullName.fName} {fullName.lName}
+        Hello {contact.fName} {contact.lName}
       </h1>
+      <p>{contact.email}</p>
       <form>
         <input
           name="fName"
           onChange={handleChange}
-          value={fullName.fName}
+          value={contact.fName}
           placeholder="First Name"
         />
         <input
           name="lName"
           onChange={handleChange}
-          value={fullName.lName}
+          value={contact.lName}
           placeholder="Last Name"
+        />
+        <input
+          name="email"
+          onChange={handleChange}
+          value={contact.email}
+          placeholder="Email"
         />
         <button>Submit</button>
       </form>
