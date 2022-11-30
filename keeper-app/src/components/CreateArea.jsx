@@ -19,6 +19,10 @@ function CreateArea(props) {
   // Sending data to App Component
   function submitNote(event) {
     props.onAdd(note);
+    setNote({
+      title: "",
+      content: "",
+    });
     event.preventDefault();
   }
   return (
