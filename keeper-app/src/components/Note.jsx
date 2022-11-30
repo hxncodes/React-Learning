@@ -1,6 +1,7 @@
 import React from "react";
 
 function Note(props) {
+  // getting onDelete props from App.js and also getting id of note to delete
   function handleClick() {
     props.onDelete(props.id);
   }

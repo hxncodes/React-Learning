@@ -30,7 +30,7 @@ function App() {
       <Header />
       <CreateArea onAdd={addNote} />
 
-      {/* Displaying Notes from notes array using map function */}
+      {/* Displaying Notes from notes array using map function also setting index as key and id of note*/}
       {notes.map((noteItem, index) => {
         return (
           <Note

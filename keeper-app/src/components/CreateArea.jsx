@@ -16,7 +16,7 @@ function CreateArea(props) {
       };
     });
   }
-  // Sending data to App Component
+  // Sending data to App Component and clearing fields afterwards
   function submitNote(event) {
     props.onAdd(note);
     setNote({
