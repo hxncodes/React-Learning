@@ -2,10 +2,10 @@ import React from "react";
 import { Button, IconButton, Typography } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import AlarmIcon from "@mui/icons-material/Alarm";
-
+import Grid from "@mui/material/Grid";
 export default function Mui() {
   return (
-    <div>
+    <Grid item xs={8}>
       <Typography variant="h3">React-MUI Crash Course</Typography>
       <Typography>Custom Typography</Typography>
       <Button>Basic Button</Button>
@@ -17,6 +17,6 @@ export default function Mui() {
       <IconButton color="secondary" aria-label="add an alarm">
         <AlarmIcon />
       </IconButton>
-    </div>
+    </Grid>
   );
 }

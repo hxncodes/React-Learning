@@ -1,30 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import BlogList from "./pages/BlogList";
-import Blog from "./pages/Blog";
-import BlogLayout from "./pages/BlogLayout";
-import NotFound from "./pages/NotFound";
-import Mui from "./pages/Mui"
+import Navbar from "./components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import Grid from "@mui/material/Grid";
 
 function App() {
   return (
-    <div className="app">
+    <Grid container>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        {/* Nested Route */}
-        <Route path="/blog" element={<BlogLayout />}>
-          <Route index element={<BlogList />} />
-          <Route path=":id" element={<Blog />} />
-        </Route>
-        {/* <Route path="/blog" element={<BlogList />} />
-        <Route path="/blog/:id" element={<Blog />} /> */}
-        <Route path="*" element={<NotFound />} />
-        <Route path="/mui" element={<Mui />} />
-      </Routes>
-    </div>
+      <Outlet />
+    </Grid>
   );
 }
 

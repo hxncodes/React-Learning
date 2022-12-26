@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Grid from "@mui/material/Grid";
 export default function NotFound() {
   // it will redirect to home page after 2 seconds
   const navigate = useNavigate();
@@ -11,5 +11,5 @@ export default function NotFound() {
     }, 2000);
   }, []);
 
-  return <h1>NotFound</h1>;
+  return <Grid item xs={8}>NotFound</Grid>;
 }
