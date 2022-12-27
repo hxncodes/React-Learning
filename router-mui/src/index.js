@@ -15,23 +15,15 @@ import NotFound from "./pages/NotFound";
 import Mui from "./pages/Mui";
 
 // MUI theme
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import dashboardTheme from "./dashboardTheme";
 import "./index.css";
-
-// primary color changed to Gold color
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#FFD700",
-    },
-  },
-});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={dashboardTheme}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="authentication" element={<Authentication />} />
@@ -44,7 +36,7 @@ root.render(
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-      </ThemeProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>
 );
