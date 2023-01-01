@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import CommonButton from "../components/Common/CommonButton";
+import NotificationBell from "../components/NotificationBell/NotificationBell";
 
 export default function Authentication() {
   const buttonStyles = {
@@ -26,6 +27,7 @@ export default function Authentication() {
   return (
     <Grid item xs={8} styles={{ backgroundColor: "009be5" }}>
       Authentication
+      <NotificationBell />
       <CommonButton variant="contained" size="large" sx={buttonStyles}>
         Add use
       </CommonButton>
